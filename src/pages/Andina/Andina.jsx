@@ -17,7 +17,7 @@ function Andina() {
           <b>Santander</b>
         </Link>
 
-        <Link to="">
+        <Link to="/cundinamarca">
           <img src="/Andina/Cundinamarca.webp" alt="" />
           <b>Cundinamarca</b>
         </Link>

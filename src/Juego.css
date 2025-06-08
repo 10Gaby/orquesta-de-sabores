@@ -88,6 +88,10 @@ img.ing-santander{
     bottom: 14%;
 }
 
+img.ing-cundinamarca{
+    bottom: 11%;
+}
+
 /* Mensajes de feedback */
 .mensaje {
   position: absolute;
@@ -193,6 +197,10 @@ img.ing-santander{
 
   & > div:nth-child(1) {
     text-align: center;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
   }
 
   & > div:nth-child(2) {

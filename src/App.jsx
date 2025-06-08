@@ -9,6 +9,7 @@ import Inicio from './pages/Inicio';
 import Andina from './pages/Andina/Andina';
 import Antioquia from './pages/Andina/Antioquia';
 import Santander from './pages/Andina/Santander';
+import Cundinamarca from './pages/Andina/Cundinamarca';
 
 import MusicPlayer from './componentes/MusicPlayer';
 import { MusicProvider } from './context/MusicContext';
@@ -16,7 +17,7 @@ import { MusicProvider } from './context/MusicContext';
 // Componente que envuelve las rutas y controla la visibilidad del MusicPlayer
 function AppContent() {
   const location = useLocation();
-  const excludedRoutes = ['/antioquia', '/santander',]; // Rutas a excluir
+  const excludedRoutes = ['/antioquia', '/santander', '/cundinamarca']; // Rutas a excluir
 const showMusicPlayer = !excludedRoutes.some(route => location.pathname.startsWith(route));
 
 
@@ -28,6 +29,7 @@ const showMusicPlayer = !excludedRoutes.some(route => location.pathname.startsWi
         <Route path="/andina" element={<Andina />} />
         <Route path="/antioquia" element={<Antioquia />} />
         <Route path="/santander" element={<Santander />} />
+        <Route path="/cundinamarca" element={<Cundinamarca />} />
       </Routes>
       {showMusicPlayer && <MusicPlayer />}
     </div>
