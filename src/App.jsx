@@ -1,33 +1,47 @@
 import { useState } from 'react'
 import './App.css'
 import './Juego.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Mapa from './pages/Mapa';
 
 import Inicio from './pages/Inicio';
+
 import Andina from './pages/Andina/Andina';
 import Antioquia from './pages/Andina/Antioquia';
+import Santander from './pages/Andina/Santander';
 
-function App() {
+import MusicPlayer from './componentes/MusicPlayer';
+import { MusicProvider } from './context/MusicContext';
+
+// Componente que envuelve las rutas y controla la visibilidad del MusicPlayer
+function AppContent() {
+  const location = useLocation();
+  const excludedRoutes = ['/antioquia', '/santander',]; // Rutas a excluir
+const showMusicPlayer = !excludedRoutes.some(route => location.pathname.startsWith(route));
+
 
   return (
-      <div className="App">
-            <Router>
-            {/* Coloca Componentes aquí para que esté disponible en todas las rutas */}
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/mapa" element={<Mapa />} />
+        <Route path="/andina" element={<Andina />} />
+        <Route path="/antioquia" element={<Antioquia />} />
+        <Route path="/santander" element={<Santander />} />
+      </Routes>
+      {showMusicPlayer && <MusicPlayer />}
+    </div>
+  );
+}
 
-              {/* Usa solo un Router que envuelva las rutas */}
-                <Routes>
-                  <Route path="/" element={<Inicio />} />
-                  <Route path="/mapa" element={<Mapa />} />
-                  <Route path="/andina" element={<Andina />} />
-                  <Route path="/antioquia" element={<Antioquia />} />
-                </Routes>
-
-
-            </Router>
-
-          </div>
-  )
+function App() {
+  return (
+    <Router>
+      <MusicProvider> {/* Envuelve toda la app con el provider */}
+        <AppContent />
+      </MusicProvider>
+    </Router>
+  );
 }
 
 export default App;

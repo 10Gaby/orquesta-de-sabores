@@ -1,10 +1,12 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Header from "../componentes/header";
 
 function Mapa() {
   return (
     <main className="mapa">
         <img src="/img/Decoración 2.svg" alt="" className="dec" />
+        <Header enlace="/" />
         <div>
             <h3>Orquesta de Sabores</h3>
             <h1>Mapa</h1>

@@ -9,30 +9,37 @@ import Header from '../../componentes/header';
 
 import useScore from '../../store/useScore';
 
-function Antioquia() {
+function Santander() {
     const score = useScore();
     const navigate = useNavigate();
   // INGREDIENTES CORRECTOS (EN ORDEN ESPECÍFICO)
   const ingredientesEnOrden = [
-    { nombre: "Arroz Blanco", imagen: "/Arroz Blanco.svg" },
-    { nombre: "Frijoles", imagen: "/Frijoles.svg" },
-    { nombre: "Carne en polvo", imagen: "/Carne en polvo.svg" },
-    { nombre: "Platano Maduro", imagen: "/Platano Maduro.svg" },
-    { nombre: "Chorizo", imagen: "/Chorizo.svg" },
-    { nombre: "Arepa", imagen: "/Arepa.svg" },
-    { nombre: "Chicharron", imagen: "/Chicharron.svg" },
-    { nombre: "Aguacate", imagen: "/Aguacate.svg" },
-    { nombre: "Huevo", imagen: "/Huevo.svg" },
+    { nombre: "Caldo de carne", imagen: "/Caldo de carne.svg" },
+    { nombre: "Cerveza", imagen: "/Cerveza.svg" },
+    { nombre: "Cebollas Cabezonas", imagen: "/Cebollas Cabezonas.svg" },
+    { nombre: "Tomate", imagen: "/Tomate.svg" },
+    { nombre: "Pimentón Rojo", imagen: "/Pimentón rojo.svg" },
+    { nombre: "Dientes de ajo", imagen: "/Dientes de ajo.svg" },
+    { nombre: "Cabrito", imagen: "/Cabrito.svg" },
+    { nombre: "Comino", imagen: "/Comino.svg" },
+    { nombre: "Sal y Pimienta", imagen: "/Sal y pimienta.svg" },
+    { nombre: "Orégano", imagen: "/Orégano.svg" },
   ];
 
   // INGREDIENTES INCORRECTOS (para mezclar)
   const ingredientesIncorrectos = [
     { nombre: "Arroz de Coco", imagen: "Arroz de coco.svg" },
-    { nombre: "Cebolla", imagen: "Cebolla.svg" },
+    { nombre: "Agua", imagen: "Agua.svg" },
     { nombre: "Cilantro", imagen: "Cilantro.svg" },
-    { nombre: "Orégano", imagen: "Orégano.svg" },
+    { nombre: "Arepa", imagen: "Arepa.svg" },
     { nombre: "Queso", imagen: "Queso.svg" },
     { nombre: "Leche", imagen: "Leche.svg" },
+    { nombre: "Platano Maduro", imagen: "Platano Maduro.svg" },
+    { nombre: "Chicharron", imagen: "Chicharron.svg" },
+    { nombre: "Leche", imagen: "Leche.svg" },
+    { nombre: "Tostado", imagen: "Tostado.svg" },
+    { nombre: "Carne en polvo", imagen: "/Carne en polvo.svg" },
+    { nombre: "Huevo", imagen: "/Huevo.svg" },
   ];
 
  // Estados
@@ -73,7 +80,7 @@ const [iniciarJuego, setIniciarJuego] = useState(false);
     audioPerdio.current = new Audio(Perdio);
     audioPerdio.current.loop = true;
     
-    score.reset('Antioquia');
+    score.reset('Santander');
 
     return () => {
       audioFondo.current.pause();
@@ -109,8 +116,8 @@ const [iniciarJuego, setIniciarJuego] = useState(false);
   };
 
   useEffect(()=>{
-    if (score.puntaje.Antioquia > 0) {
-      score.puntaje.Antioquia = 0; // Reiniciar puntaje al entrar
+    if (score.puntaje.Santander > 0) {
+      score.puntaje.Santander = 0; // Reiniciar puntaje al entrar
     }
   }, [navigate]);
 
@@ -180,7 +187,7 @@ useEffect(() => {
       audioCorrecto.current.play();
       setIngredientesSeleccionados([...ingredientesSeleccionados, opcionSeleccionada]);
       setPuntaje(puntaje + 1);
-      score.sumar('Antioquia', 1);
+      score.sumar('Santander', 1);
       setMensaje("¡Correcto!");
       setImagenCliente("/img/Cliente 1.svg");
     } else {
@@ -208,7 +215,7 @@ const reiniciarJuego = () => {
   setIndiceActual(0);
   setIngredientesSeleccionados([]);
   setPuntaje(0);
-  score.reset('Antioquia');
+  score.reset('Santander');
   setJuegoTerminado(false);
 
   setMostrarPopup(true);
@@ -237,7 +244,7 @@ useEffect(() => {
     }
     
     // Reproducir sonido según el resultado en bucle
-    if (score.puntaje.Antioquia > 4) {
+    if (score.puntaje.Santander > 5) {
       audioGano.current.currentTime = 0;
       audioGano.current.play().catch(e => console.log("Error al reproducir sonido de victoria:", e));
       
@@ -262,22 +269,23 @@ useEffect(() => {
       <div className="popup-ingredientes">
         <div className="popup-contenido">
           <div>
-            <img src="/Andina/Antioquia.webp" alt="" />
+            <img src="/Andina/Santander.webp" alt="" />
             <h3>Antioquia</h3>
           </div>
           <div>
                 <p>Tienes 5 segundos para recordar los ingredientes</p>
-                <h2>Ingredientes Bandeja Paisa</h2>
+                <h2>Cabrito</h2>
                 <ul>
-                    <li>Frijoles</li>
-                    <li>Arroz Blanco</li>
-                    <li>Chicharrón</li>
-                    <li>Carne en polvo</li>
-                    <li>Chorizo</li>
-                    <li>Huevo frito</li>
-                    <li>Plátano maduro</li>
-                    <li>Aguacate</li>
-                    <li>Arepa</li>
+                    <li>Caldo de carne</li>
+                    <li>Cerveza</li>
+                    <li>Cebollas Cabezonas</li>
+                    <li>Tomate</li>
+                    <li>Pimentón rojo</li>
+                    <li>Dientes de ajo</li>
+                    <li>Cabrito</li>
+                    <li>Comino</li>
+                    <li>Sal y pimienta</li>
+                    <li>Orégano</li>
                 </ul>
                 <button 
                     className="btn2"
@@ -319,9 +327,9 @@ useEffect(() => {
             {ingredientesEnOrden.map((ingrediente, index) => (
               <img 
                 key={index}
-                src={`/Andina/${ingrediente.imagen}`} 
+                src={`/Andina/Santander/${ingrediente.imagen}`} 
                 alt={ingrediente.nombre}
-                className={`ingrediente ${
+                className={`ingrediente ing-santander ${
                   ingredientesSeleccionados.some(ing => ing.nombre === ingrediente.nombre) 
                     ? 'visible' 
                     : 'hidden'
@@ -358,16 +366,16 @@ useEffect(() => {
             ))}
         </div>
         ) : (
-        score.puntaje.Antioquia > 4 ? (
+        score.puntaje.Santander > 5 ? (
             <div className="resultado-final">
             <h1>Ganaste</h1>
-            <p>Puntaje final: {useScore.getState().puntaje.Antioquia} de {ingredientesEnOrden.length}</p>
+            <p>Puntaje final: {useScore.getState().puntaje.Santander} de {ingredientesEnOrden.length}</p>
             <button onClick={reiniciarJuego}>Jugar de nuevo</button>
             </div>
         ) : (
             <div className="resultado-final">
             <h1>Perdiste</h1>
-            <p>Puntaje final: {useScore.getState().puntaje.Antioquia} de {ingredientesEnOrden.length}</p>
+            <p>Puntaje final: {useScore.getState().puntaje.Santander} de {ingredientesEnOrden.length}</p>
             <button onClick={reiniciarJuego}>Jugar de nuevo</button>
             </div>
         )
@@ -379,7 +387,7 @@ useEffect(() => {
         {!juegoTerminado ? (
             <img src={imagenCliente} alt="Cliente" />
         ) : (
-        score.puntaje.Antioquia > 4 ? (
+        score.puntaje.Santander > 5 ? (
             <img src="/img/Cliente 1.svg" alt="Cliente" />
         ) : (
             <img src="/img/Cliente 1 - Error.svg" alt="Cliente" />
@@ -391,4 +399,4 @@ useEffect(() => {
   );
 }
 
-export default Antioquia;
+export default Santander;

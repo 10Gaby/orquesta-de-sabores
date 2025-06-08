@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import Header from "../../componentes/header";
 
 function Andina() {
   return (
     <main className="andina">
+
       <img src="/img/Región andina.svg" alt="" />
       <div>
         <Link to="/antioquia">
@@ -10,7 +12,7 @@ function Andina() {
           <b>Antioquia</b>
         </Link>
 
-        <Link to="">
+        <Link to="/santander">
           <img src="/Andina/Santander.webp" alt="" />
           <b>Santander</b>
         </Link>
@@ -20,6 +22,7 @@ function Andina() {
           <b>Cundinamarca</b>
         </Link>
       </div>
+      <Header enlace="/mapa" />
     </main>
   );
 }
