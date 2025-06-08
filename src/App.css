@@ -1,5 +1,7 @@
 .inicio{
   background-image: url('/img/Fondo Amarillo.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
 
@@ -124,6 +126,8 @@
 
 .andina{
   background-image: url('/img/Fondo Amarillo.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
   display: grid;
