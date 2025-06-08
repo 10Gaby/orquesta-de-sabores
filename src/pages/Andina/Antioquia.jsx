@@ -5,7 +5,7 @@ import MusicaFondo from '../../assets/Audios/Partida.mp3';
 import Gano from '../../assets/Audios/Gano.mp3';
 import Perdio from '../../assets/Audios/Perdio.mp3';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../componentes/header';
+import Header from '../../componentes/Header';
 
 import useScore from '../../store/useScore';
 
