@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Header from "../../componentes/header";
+import Header from "../../componentes/Header";
 
 function Andina() {
   return (
