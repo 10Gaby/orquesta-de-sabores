@@ -1,0 +1,195 @@
+.inicio{
+  background-image: url('/img/Fondo Amarillo.svg');
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  color: var(--color6);
+  gap: 20px;
+  overflow: hidden;
+
+  & h1{
+    color: white;
+  }
+
+  & img{
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.mapa{
+  background-image: url('/img/Fondo Mapa.svg');
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  color: var(--color2);
+  gap: 20px;
+
+  & img.dec{
+    position: absolute;
+    height: 35%;
+    left: 0px;
+    bottom: 0px;
+  }
+}
+
+.map{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  align-content: center;
+
+  & img{
+    height: 90vh;
+    z-index: 1;
+  }
+}
+
+.link-icon{
+  position: absolute;
+  z-index: 2;
+  color: var(--color2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  &:nth-child(3){
+  animation: scale 1s infinite;
+  }
+}
+
+.icon{
+  font-size: 50px;
+}
+
+.i1{
+  top: 15%;
+  left: 22%;
+}
+
+.i2{
+  top: 37%;
+  left: 20%;
+}
+
+.i3{
+  top: 40%;
+  left: 40%;
+}
+
+.i4{
+  top: 65%;
+  left: 30%;
+}
+
+.i5{
+  top: 45%;
+  left: 9%;
+}
+
+.i6{
+  top: 3%;
+  left: 3%;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*==================REGIÓN ANDINA==================*/
+
+.andina{
+  background-image: url('/img/Fondo Amarillo.svg');
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  align-content: center;
+
+  & img:nth-child(1){
+    height: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  & > div:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--color6);
+    height: 100dvh;
+    padding: 0px 10%;
+  }
+
+  & a{
+    font-family: var(--subtítulos);
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 200;
+    color: var(--color6);
+    text-align: center;
+  }
+
+  & a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .2s;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+}
+
+.controles-volumen {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.mensaje-iniciar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+}

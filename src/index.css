@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Pompiere&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*==================IMPORTACIÓN TIPOGRAFÍAS==================*/
+
+
+/* Amal Jariyah */
+@font-face {
+  font-family: 'Amal Jariyah';
+  src: url('./assets/amal-jariyah/AmalJariyah.otf') format('opentype');;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Madrid Ama */
+@font-face {
+  font-family: 'Madrid Ama';
+  src: url('./assets/madridAMA/MadridAMARegular.otf') format('opentype');;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*=====================================================*/
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --títulos: "Madrid Ama", sans-serif;
+  --subtítulos: "Londrina Solid", sans-serif;
+  --resaltados: "Amal Jariyah", sans-serif;
+  --textos: "Pompiere", sans-serif;
+
+  --color1: #252525;
+  --color2: #EDF2C9;
+  --color3: #F1B71C;
+  --color4: #F15E22;
+  --color4: #F28705;
+  --color6: #2C4001;
+
+  color: var(--color1);
+  background-color: var(--color2);
+}
+
+/*==================ESTILOS GENERALES==================*/
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+h1{
+  font-family: var(--títulos);
+  font-size: 6rem;
+  line-height: 1.1;
+}
+
+h2{
+  font-family: var(--subtítulos);
+  font-size: 2.5em;
+  line-height: 1.1;
+}
+
+h3{
+  font-family: var(--resaltados);
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+p{
+  font-family: var(--textos);
+  font-size: 1.6em;
+  line-height: 1.5;
+}
+
+.btn1{
+  font-family: var(--títulos);
+  background-color: var(--color6);
+  color: var(--color2);
+  display: block;
+  width: fit-content;
+  padding: 10px 50px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: .2s;
+  border: 2px transparent solid;
+
+  &:hover{
+    scale: 1.1;
+    background-color: var(--color4);
+    border: 2px solid var(--color6);
+  }
+}
+
+/* 
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */

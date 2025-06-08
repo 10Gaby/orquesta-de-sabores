@@ -1,0 +1,149 @@
+.juego{
+    height: 100vh;
+    width: 100vw;
+    padding: 0 10%;
+
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.fondo2{
+    background-image: url('/img/Fondo Amarillo.svg');
+}
+
+.fondo3{
+    background-image: url('/img/Fondo Verde.svg');
+    color: var(--color2);
+}
+
+.plato{
+    width: 100%;
+    height: 40vh;
+    padding-top: 40px;
+    background-color: var(--color2);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    position: relative;
+
+    & .plato-img{
+        width: 60%;
+    }
+}
+
+.plato.final{
+    background-color: transparent;
+}
+
+.ingredientes{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+    padding-top: 40px;
+
+    & button{
+        background-color: var(--color2);
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--color4);
+        }
+    }
+}
+
+.ingredientes-plato{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+img.ingrediente{
+    z-index: 3;
+    bottom: 25%;
+    width: 100%;
+    position: absolute;
+}
+
+/* Mensajes de feedback */
+.mensaje {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.mensaje.correcto {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.mensaje.error {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Temporizador */
+.temporizador {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+
+.ingrediente.visible {
+  display: initial;
+}
+
+.ingrediente.hidden {
+  display: none;
+}
+
+/* Resultado final */
+.resultado-final {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resultado-final button {
+  background-color: var(--color1);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+.iniciar-musica {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.iniciar-musica button {
+  background: var(--color1);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
